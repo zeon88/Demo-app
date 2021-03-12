@@ -1,0 +1,43 @@
+:host {
+  .layout-container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-w {
+    width: 600px;
+  }
+
+  .mr-top {
+    margin-top: 1rem;
+  }
+  .mr-botom {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle-spacer {
+    margin-left: 3rem;
+  }
+
+  .adress-title {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-card-subtitle {
+    font-size: 16px;
+  }
+}

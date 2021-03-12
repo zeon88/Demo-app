@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-sidenav-container {
+  flex-grow: 1;
+}
+
+.mr-1 {
+  margin-left: 1rem;
+}
+
+.navigation-block {
+  height: 100%;
+  min-width: 200px;
+}
+

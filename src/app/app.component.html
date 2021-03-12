@@ -1,0 +1,35 @@
+<mat-toolbar [color]="'primary'" fxLayout="row">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="row" fxLayoutAlign="flex-start center">
+      <button mat-icon-button (click)="mateSideNavRef.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div  class="mr-1">
+      <span>Demo Patient Application</span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav  #mateSideNavRef mode="side" opened>
+    <div class="navigation-block" fxLayout="column" fxLayoutAlign="space-between center">
+      <mat-nav-list fxLayout="column" fxLayoutAlign="flex-start center">
+        <a mat-list-item  routerLink="/home"  routerLinkActive="active">
+          <mat-icon matListIcon>home</mat-icon>
+          <span matLine>Home</span>
+        </a>
+        <a mat-list-item routerLink="/patient"  routerLinkActive="active">
+          <mat-icon matListIcon>person_add</mat-icon>
+          <span matLine>Add new patient</span>
+        </a>
+        <a mat-list-item  routerLink="/patients"  routerLinkActive="active">
+          <mat-icon matListIcon>social_distance</mat-icon>
+          <span matLine>Patients overview</span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

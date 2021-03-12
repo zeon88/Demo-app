@@ -1,0 +1,26 @@
+:host{
+  mat-form-field {
+    width: 100%;
+  }
+
+  .adress-title {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
+  .mr-top {
+    margin-top: 1rem;
+  }
+  .mr-top-button {
+    margin-top: 0.2rem;
+  }
+
+ }

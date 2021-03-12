@@ -1,0 +1,67 @@
+<mat-toolbar *ngIf="!patientUpdate">
+  <span>Add Patient</span>
+</mat-toolbar>
+<div class="layout-container">
+  <mat-card class="card-w">
+    <mat-card-header>
+      <mat-card-title *ngIf="!patientUpdate">Patient Information</mat-card-title>
+      <mat-card-subtitle *ngIf="patientUpdate">
+        <span>
+          Patient Id:{{patientUpdate.id}}
+        </span>
+        <span class="subtitle-spacer">
+          Registration Date:{{patientUpdate.registeredDate | date:'mediumDate'}}
+        </span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field appearance="standard">
+          <mat-label>First Name</mat-label>
+          <input type="string" matInput formControlName="firstName">
+          <mat-error *ngIf="!form.valid">
+            Please enter first Name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="!form.valid">
+            Please enter last Name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="!form.valid">
+            Please enter valid email address
+          </mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="start baseline" fxLayoutGap="1rem">
+          <mat-form-field appearance="standard">
+            <mat-label>Select Doctor</mat-label>
+            <mat-select formControlName="doctorId">
+              <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">{{doctor.firstName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Choose a birth date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field *ngIf="showVat" appearance="standard">
+            <mat-label>Vat Code</mat-label>
+            <input matInput formControlName="vatCode">
+          </mat-form-field>
+        </div>
+        <div>
+          <app-patient-form-address [Form]="form" [patient]="patientUpdate"></app-patient-form-address>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions fxLayout="column">
+      <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submitForm()">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
