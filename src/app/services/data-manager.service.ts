@@ -38,9 +38,9 @@ const addresses: Address[] = [
     type: 'Home',
     phone: '+38906418214',
     street: 'Test Street',
-    city: 'Washington',
+    city: 'Dallas',
     zipCode: 321,
-    country: 'Serbia'
+    country: 'Texas'
   }
 
 ]
